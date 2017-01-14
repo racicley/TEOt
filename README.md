@@ -1,1 +1,1 @@
-#Trabalho dee TEOt
+#Trabalho de TEOt
