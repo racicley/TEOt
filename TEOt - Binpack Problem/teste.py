@@ -3,21 +3,32 @@ Created on 11 de jan de 2017
 
 @author: Racicley
 '''
+from _ast import Num
 
-def manipula_inst():
+def manipula_inst(num_inst):
     arq = open('db/binpack1.txt','r').readlines()
     count = 0
     lista_it = []
+    
+    if(num_inst == 1):
+        for linha in arq[2:]:
+            if(linha == " u120_01 \n"):
+                break
 
-    for linha in arq[2:]:
-        if(linha == " u120_01 \n"):
-            break
+            lista_it.append(int(linha.rstrip()))
+            count = count + 1
+        
+        return lista_it
+    
+    elif(num_inst == 2):
+        for linha in arq[124:]:
+            if(linha == " u120_02 \n"):
+                break
 
-        lista_it.append(int(linha.rstrip()))
-        count = count + 1
-
-
-    return lista_it
+            lista_it.append(int(linha.rstrip()))
+            count = count + 1
+    
+        return lista_it
 
 def gera_lrestrito(lista,alpha):
     lista_restrit = []
@@ -70,6 +81,8 @@ if __name__ == '__main__':
     mochilas = {}
     
     #lista de itens a serem alocados nas mochilas
-    lista_itens = manipula_inst()
+    lista_itens = manipula_inst(1)
+    
+    print(mochilas)
     
     
