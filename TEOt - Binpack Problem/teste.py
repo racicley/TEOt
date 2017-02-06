@@ -4,6 +4,7 @@ Created on 11 de jan de 2017
 @author: Racicley
 '''
 from _ast import Num
+from random import random, randint
 
 def manipula_inst(num_inst):
     arq = open('db/binpack1.txt','r').readlines()
@@ -83,6 +84,8 @@ if __name__ == '__main__':
     #lista de itens a serem alocados nas mochilas
     lista_itens = manipula_inst(1)
     
-    print(mochilas)
+    constroi(lista_itens, 1)
+    #print(mochilas)
     
+    print(randint(0,len(mochilas.keys())))
     
